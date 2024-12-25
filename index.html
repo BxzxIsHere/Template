@@ -1,147 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WCI Construction</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            background: linear-gradient(45deg, black, #d4af37);
-            background-size: 400% 400%;
-            animation: gradientShift 10s ease infinite;
-            color: gold;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .snowflake {
-            position: fixed;
-            top: -10px;
-            color: white;
-            font-size: 1em;
-            animation: fall linear infinite;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(110vh);
-            }
-        }
-
-        header {
-            text-align: center;
-            padding: 1rem;
-            background: rgba(0, 0, 0, 0.8);
-            color: gold;
-            font-size: 1.5em;
-            position: sticky;
-            top: 0;
-        }
-
-        main {
-            text-align: center;
-            margin: 50px auto;
-            max-width: 800px;
-        }
-
-        h1 {
-            font-size: 3em;
-            color: gold;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-
-        p {
-            font-size: 1.2em;
-            color: #d4af37;
-        }
-
-        button {
-            display: inline-block;
-            background-color: gold;
-            color: black;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            font-weight: bold;
-            border: 2px solid gold;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #d4af37;
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
-        }
-
-        button:active {
-            transform: translateY(2px);
-            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.9);
-            color: gold;
-            font-size: 0.9em;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WCI Construction - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        Welcome to WCI Construction
-    </header>
-
-    <!-- Main Content -->
-    <main>
-        <h1>WCI Construction</h1>
-        <p>Building dreams with precision and excellence. We bring your ideas to life.</p>
-        <button onclick="alert('Thank you for visiting WCI Construction!')">Learn More</button>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        &copy; 2024 WCI Construction - Building the Future, One Brick at a Time
-    </footer>
-
-    <!-- Snowflake Script -->
-    <script>
-        const createSnowflake = () => {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            snowflake.innerText = '❄';
-            snowflake.style.left = `${Math.random() * 100}vw`;
-            snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
-            snowflake.style.animationDuration = `${Math.random() * 3 + 5}s`;
-            document.body.appendChild(snowflake);
-
-            setTimeout(() => snowflake.remove(), 8000);
-        };
-
-        setInterval(createSnowflake, 200);
-    </script>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>WCI Construction</h1>
+    <p>Building dreams with precision and excellence. We bring your ideas to life.</p>
+    <button onclick="alert('Thanks for trusting WCI Construction!')">Learn More</button>
+  </main>
+  <footer>
+    <p>&copy; 2024 WCI Construction - Building the Future, One Brick at a Time</p>
+  </footer>
 </body>
 </html>

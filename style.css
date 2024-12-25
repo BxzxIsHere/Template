@@ -3,31 +3,75 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
   color: white;
-  background: linear-gradient(to bottom, #6a11cb, #2575fc);
-  background-attachment: fixed;
-  overflow-x: hidden;
+  background: black;
+  overflow: hidden;
 }
 
-a {
-  color: #ffde59;
-  text-decoration: none;
+/* Snowflake animation */
+@keyframes fall {
+  0% {
+    transform: translateY(-10%) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110%) rotate(360deg);
+    opacity: 0;
+  }
 }
 
-a:hover {
-  text-decoration: underline;
+/* Snowflakes */
+.snowflake {
+  position: absolute;
+  top: -50px;
+  color: white;
+  font-size: 1em;
+  animation: fall 10s linear infinite;
+  opacity: 0.8;
+}
+
+.snowflake:nth-child(1) {
+  left: 10%;
+  animation-duration: 8s;
+  animation-delay: 0s;
+  font-size: 1.2em;
+}
+.snowflake:nth-child(2) {
+  left: 30%;
+  animation-duration: 10s;
+  animation-delay: 2s;
+  font-size: 1.5em;
+}
+.snowflake:nth-child(3) {
+  left: 50%;
+  animation-duration: 12s;
+  animation-delay: 4s;
+  font-size: 0.8em;
+}
+.snowflake:nth-child(4) {
+  left: 70%;
+  animation-duration: 15s;
+  animation-delay: 6s;
+  font-size: 1.3em;
+}
+.snowflake:nth-child(5) {
+  left: 90%;
+  animation-duration: 9s;
+  animation-delay: 3s;
+  font-size: 1.1em;
 }
 
 /* Header and navigation styles */
 header {
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
+  background: rgba(0, 0, 0, 0.9);
   padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 nav ul {
@@ -40,32 +84,33 @@ nav ul {
 }
 
 nav ul li a {
+  color: #fff;
   font-weight: bold;
-  padding: 5px 10px;
-  transition: background 0.3s ease;
+  text-decoration: none;
+  padding: 10px 15px;
+  border: 2px solid white;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
   background: #ffde59;
-  color: #333;
-  border-radius: 5px;
+  color: black;
 }
 
 /* Main content */
 main {
-  max-width: 900px;
-  margin: 50px auto;
+  max-width: 800px;
+  margin: 100px auto;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   text-align: center;
+  color: white;
 }
 
 h1, h2 {
-  color: #ffde59;
   font-size: 2.5em;
   margin-bottom: 20px;
+  color: #ffde59;
 }
 
 p {
@@ -73,70 +118,48 @@ p {
   margin-bottom: 20px;
 }
 
-/* Animated phone container */
-.phone-container {
-  position: relative;
-  margin: 30px auto;
-  width: 300px;
-  height: 600px;
-  border: 15px solid #000;
-  border-radius: 30px;
-  background: #333;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-}
-
-.phone-screen {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: url('https://via.placeholder.com/300x600.png?text=Landscape') no-repeat center center;
-  background-size: cover;
-  animation: slideLandscape 10s infinite alternate;
-}
-
-@keyframes slideLandscape {
-  0% {
-    background-position: center;
-  }
-  100% {
-    background-position: top;
-  }
-}
-
-/* Footer styles */
-footer {
-  text-align: center;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-}
-
 /* Button styles */
 button {
   display: inline-block;
   background-color: #ffde59;
   color: #333;
-  padding: 10px 20px;
-  font-size: 1em;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  font-weight: bold;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
-  margin-top: 20px;
+  cursor: pointer;
 }
 
 button:hover {
   background-color: #f3c900;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  font-size: 0.9em;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   main {
-    margin: 20px;
+    margin: 50px 20px;
     padding: 15px;
   }
 
@@ -152,9 +175,5 @@ button:hover {
   p {
     font-size: 1em;
   }
-
-  .phone-container {
-    width: 200px;
-    height: 400px;
-  }
 }
+
